@@ -20,7 +20,9 @@ class Decrypter < FileConverter
   def file_decrypt
     validate_not_zip_file
 
-    to_unzip
+    unless to_unzip
+      error("unzip #{file} failed")
+    end
 
     trash if @with_trash
     open_filedir_for_mac if @with_open_dir && mac?

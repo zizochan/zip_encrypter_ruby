@@ -19,7 +19,9 @@ class Encrypter < FileConverter
     validate_zip_file
     validate_after_file
 
-    to_zip
+    unless to_zip
+      error("zip #{file} failed")
+    end
 
     trash
   end

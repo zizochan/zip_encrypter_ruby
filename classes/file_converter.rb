@@ -37,7 +37,7 @@ class FileConverter
   end
 
   def set_file(file)
-    @file = file
+    @file = File.expand_path(file)
 
     validate_file
   end
