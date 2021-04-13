@@ -13,7 +13,16 @@ bundle install
 ```
 
 ## setting
+```
 write password in "password.txt"
+```
+
+### add alias
+
+```
+alias decrypt='ruby ~/path/to/zip_encrypter_ruby/decrypt.rb'
+alias encrypt='ruby ~/path/to/zip_encrypter_ruby/encrypt.rb'
+```
 
 # USAGE
 
