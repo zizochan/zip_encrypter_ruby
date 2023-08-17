@@ -4,7 +4,9 @@ class Encrypter < FileConverter
   attr_accessor :file, :password
 
   def initialize(file, force_password: nil)
-    set_password(force_password: force_password)
+    super()
+
+    set_password(force_password:)
 
     set_file(file)
   end
@@ -19,9 +21,7 @@ class Encrypter < FileConverter
     validate_zip_file
     validate_after_file
 
-    unless to_zip
-      error("zip #{file} failed")
-    end
+    error("zip #{file} failed") unless to_zip
 
     trash
   end

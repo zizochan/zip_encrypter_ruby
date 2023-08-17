@@ -11,6 +11,8 @@ class PasswordUpdater < FileConverter
   WAIT_SECOND = 3
 
   def initialize(dir)
+    super()
+
     set_dir(dir)
   end
 

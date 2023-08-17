@@ -1,1 +1,15 @@
-inherit_from: .rubocop_todo.yml
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringConcatenation:
+  Enabled: false

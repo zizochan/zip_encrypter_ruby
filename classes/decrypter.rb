@@ -4,6 +4,8 @@ class Decrypter < FileConverter
   attr_accessor :file, :password
 
   def initialize(file, with_trash: false, with_open_dir: true)
+    super()
+
     set_password
     set_file(file)
 
@@ -20,9 +22,7 @@ class Decrypter < FileConverter
   def file_decrypt
     validate_not_zip_file
 
-    unless to_unzip
-      error("unzip #{file} failed")
-    end
+    error("unzip #{file} failed") unless to_unzip
 
     trash if @with_trash
     open_filedir_for_mac if @with_open_dir && mac?
